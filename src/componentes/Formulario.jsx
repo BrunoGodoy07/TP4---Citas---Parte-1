@@ -2,18 +2,13 @@ import React from 'react'
 
 export default function Formulario() {
   return (
-    <div className="p-3 border border-warning rounded">
-      <div className="row g-2">
-          <div className="col">
-              <input type="text" className="form-control" placeholder="First name" />
-          </div>
-          <div className="col">
-              <input type="text" className="form-control" placeholder="Last name" />
-          </div>
-          <div className="col">
-              <button type="button" className="btn btn-primary w-100">Agregar cita</button>
-          </div>
-      </div>
-    </div>
+    <form>
+      <label>Nombre Mascota</label><input type="text" name="mascota" className="u-full-width" placeholder="Nombre Mascota" ></input>
+      <label>Nombre Dueño</label><input type="text" name="propietario" className="u-full-width" placeholder="Nombre dueño de la mascota" ></input>
+      <label>Fecha</label><input type="date" name="fecha" className="u-full-width" ></input>
+      <label>hora</label><input type="time" name="hora" className="u-full-width" ></input>
+      <label>Sintomas</label><textarea name="sintomas" className="u-full-width"></textarea>
+      <button type="submit" className="u-full-width button-primary">Agregar Cita</button>
+    </form>
   );
 }

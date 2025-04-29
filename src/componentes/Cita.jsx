@@ -2,10 +2,14 @@ import React from 'react'
 
 export default function Cita(props) {
   return (
-    <div key={props.datos.id} className="border border-primary rounded p-2 mb-2">
-    <p><strong>#{props.datos.id}</strong></p>
-    <p>Nombre: {props.datos.nombre}</p>
-    <p>Apellido: {props.datos.apellido}</p>
+    <div className='cita'>
+    <p> #{props.datos.id}</p> 
+    <p>Mascota: <span>{props.datos.mascota}</span></p>
+    <p>Dueño: <span>{props.datos.Dueño}</span></p>
+    <p>Fecha: <span>{props.datos.fecha}</span></p>
+    <p>Hora: <span>{props.datos.hora}</span></p>
+    <p>Sintomas: <span>{props.datos.sintomas}</span></p>
+    <button className="button elimnar u-full-width">Eliminar ×</button>
   </div>
   )
 }
