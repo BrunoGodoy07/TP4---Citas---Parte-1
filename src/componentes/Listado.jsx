@@ -1,7 +1,7 @@
 import React from 'react'
 import Cita from './Cita'
 
-function Listado(props, setCita) {
+function Listado(props) {
   if(props.cita==null) return null;
     return (
       <table class="table">
@@ -13,24 +13,11 @@ function Listado(props, setCita) {
         </tr>
       </thead>
       <tbody>
-            {
-              props.cita.map((c)=>{
-                {console.log(c)}
-                <Cita key={c.id} nombre={c.nombre} apellido={c.apellido} setCita={setCita}/>            
-              }) 
-            }
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>John</td>
-        </tr>
+        {
+          props.cita.map((c)=>(
+          <Cita key={c.id} datos={c} />
+          ))
+        }
       </tbody>
     </table>
   )

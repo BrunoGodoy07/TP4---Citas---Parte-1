@@ -1,17 +1,13 @@
 import React from 'react'
 
-export default function Cita({ key, nombre, apellido}) {
-  return (
-    <tr>
-        <th scope='row'> {key}</th>
-        <td>{nombre}</td> 
-        <td>{apellido}</td> 
-    </tr>
-  )
-}
+export default function Cita(props) {
 
-{/* <TableRow key={key}> // <--- I mean this section
-<TableCell> {item.id} </TableCell>
-<TableCell> {item.name} </TableCell>
-<TableCell> {item.last_name} </TableCell>
-</TableRow> */}
+
+return (
+<tr>
+  <th scope='row'> {props.datos.id}</th>
+  <td>{props.datos.nombre}</td>
+  <td>{props.datos.apellido}</td>
+</tr>
+)
+}
