@@ -1,17 +1,21 @@
-import React from 'react'
-import Cita from './Cita'
+import React from 'react';
+import Cita from './Cita';
 
-function Listado(props) {
-  if(props.cita==null) return null;
-    return (
-      <div className="cita">
+function Listado({ cita, eliminar }) {
+  
+  if (!cita || cita.length === 0) {
+    return <div className="cita"> <p>No hay citas para mostrar.</p> </div>;
+  }
+
+  return (
+    <div className="cita">
       {
-        props.cita.map((c)=>(
-          <Cita key={c.id} datos={c} />
+        cita.map((c) => (
+          <Cita key={c.id} cita={c} eliminar={eliminar} />
         ))
       }
     </div>
-  )
+  );
 }
 
-export default Listado
+export default Listado;

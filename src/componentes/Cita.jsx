@@ -1,15 +1,21 @@
-import React from 'react'
+import React from 'react';
 
-export default function Cita(props) {
+export default function Cita({ cita, eliminar }) {
   return (
     <div className='cita'>
-    <p> #{props.datos.id}</p> 
-    <p>Mascota: <span>{props.datos.mascota}</span></p>
-    <p>Dueño: <span>{props.datos.Dueño}</span></p>
-    <p>Fecha: <span>{props.datos.fecha}</span></p>
-    <p>Hora: <span>{props.datos.hora}</span></p>
-    <p>Sintomas: <span>{props.datos.sintomas}</span></p>
-    <button className="button elimnar u-full-width">Eliminar ×</button>
-  </div>
-  )
+      <p># {cita.id}</p>
+      <p>Mascota: <span>{cita.mascota}</span></p>
+      <p>Dueño: <span>{cita.Dueño}</span></p>
+      <p>Fecha: <span>{cita.fecha}</span></p>
+      <p>Hora: <span>{cita.hora}</span></p>
+      <p>Síntomas: <span>{cita.sintomas}</span></p>
+
+      <button
+        className="button eliminar u-full-width"
+        onClick={() => eliminar(cita.id)}
+      >
+        Eliminar ×
+      </button>
+    </div>
+  );
 }
