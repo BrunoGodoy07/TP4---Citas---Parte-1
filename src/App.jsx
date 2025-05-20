@@ -1,9 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Formulario from './componentes/Formulario'
 import Listado from './componentes/Listado'
 
 function App() {
-  const [citas, setCitas] = useState([]);
+  const [citas, setCitas] = useState(() => {
+    const citasGuardadas = localStorage.getItem("citas");
+    return citasGuardadas ? JSON.parse(citasGuardadas) : [];
+  });
+  useEffect(() => {
+    localStorage.setItem("citas", JSON.stringify(citas));
+  }, [citas]);
 
   const obtenerSiguienteId = () => {
     if (citas.length === 0) return 1;
